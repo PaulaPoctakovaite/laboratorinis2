@@ -11,7 +11,38 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void testCountWordsNoText() {
+        Calculations calc = new Calculations();
+        assertEquals(0, calc.CountWords(""));
+    }
+
+    @Test
+    public void testCountWordsBasicText() {
+        Calculations calc = new Calculations();
+        assertEquals(2, calc.CountWords("Hello World"));
+    }
+
+    @Test
+    public void testCountWordsWhitespace() {
+        Calculations calc = new Calculations();
+        assertEquals(0, calc.CountWords("     "));
+    }
+
+    @Test
+    public void testCountSymbolsNoText() {
+        Calculations calc = new Calculations();
+        assertEquals(0, calc.CountSymbols(""));
+    }
+
+    @Test
+    public void testCountSymbolsBasicText() {
+        Calculations calc = new Calculations();
+        assertEquals(11, calc.CountSymbols("Hello World"));
+    }
+
+    @Test
+    public void testCountSymbolsWhitespace() {
+        Calculations calc = new Calculations();
+        assertEquals(5, calc.CountSymbols("     "));
     }
 }
